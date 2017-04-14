@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+   Copyright (c) 2016 Javus Software (Pty) Ltd
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<resources>
+  <string name="app_name">Parq</string>
+
+  <string name="google_api_key">AIzaSyBAwrllx24Iy-I_yQJ5U9G2-IoXUycU0l4</string>
+  
+  
+  <string name="DrawerOpenDescription">Open navigation drawer</string>
+  <string name="DrawerCloseDescription">Close navigation drawer</string>
+
+  <string name="home">Home</string>
+  <string name="history">History</string>
+  <string name="profile">Profile</string>
+  <string name="wallet">Wallet</string>
+  <string name="payment">Payment</string>
+  <string name="coupon">Coupon</string>
+  <string name="settings">Settings</string>
+  <string name="about">About</string>
+  <string name="vehicles">Vehicles</string>
+  <string name="share">Share</string>
+  
+  <string name="logout">Log Out</string>
+  <string name="locate">Locate</string>
+  <string name="refresh">Refresh</string>
+  <string name="scanner">Scan</string>
+
+  <string name="Sign_In">Sign In</string>
+  <string name="Join_Now">Join Now</string>
+  <string name="name">First Name</string>
+  <string name="surname">Last Name</string>
+  <string name="email">Email</string>
+  <string name="password">Password</string>
+  <string name="confirmPassword">Confrirm Password</string>
+  <string name="forgot_password">Forgot Password?</string>
+  <string name="create_account">Dont have an account? <b>Sign Up</b></string>
+  <string name="Facebook_Sign_In">Login with Facebook</string>
+  <string name="Already_Have_Account">Already Have an Account? <b>Sign In</b></string>
+  <string name="Require_Help">Require Assistance? <b>Contact Us</b></string>
+  <string name="Reset_Password">Reset Password</string>
+
+  <string-array name="countries">
+    <item>Australia,au</item>
+    <item>Austria,at</item>
+    <item>Brazil,br</item>
+    <item>Canada,ca</item>
+    <item>Chile,cl</item>
+    <item>China,cn</item>
+    <item>Croatia,hr</item>
+    <item>Czech Republic,cz</item>
+    <item>Denmark,dk</item>
+    <item>Estonia,ee</item>
+    <item>Finland,fi</item>
+    <item>France,fr</item>
+    <item>Germany,de</item>
+    <item>Greece,gr</item>
+    <item>Hungary,hu</item>
+    <item>Iceland,is</item>
+    <item>India,in</item>
+    <item>Ireland,ie</item>
+    <item>Italy,it</item>
+    <item>Latvia,lv</item>
+    <item>Lithuania,lt</item>
+    <item>Netherlands,nl</item>
+    <item>New Zealand,nz</item>
+    <item>Norway,no</item>
+    <item>Sweden,se</item>
+    <item>Switzerland,ch</item>
+    <item>Ukraine,ua</item>
+    <item>United States,us</item>
+  </string-array>
+  
+</resources>

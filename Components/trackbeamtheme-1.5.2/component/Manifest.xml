@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<component format="1" id="trackbeamtheme">
+  <name>Trackbeam Theme</name>
+  <publisher>Xamarin Inc</publisher>
+  <publisher-url>http://www.xamarin.com/</publisher-url>
+  <version>1.5.2</version>
+  <summary>Trackbeam theme and sample application for iOS.</summary>
+  <packages>
+    <package id="Xamarin.Themes.Core" version="1.0.0.1" framework="ios-unified" />
+    <package id="Xamarin.Themes.Core" version="1.0.0.1" framework="ios" />
+  </packages>
+  <screenshots>
+    <img src="screenshots/00.jpg" title="00" />
+    <img src="screenshots/01.jpg" title="01" />
+    <img src="screenshots/02.jpg" title="02" />
+  </screenshots>
+  <samples>
+    <sample id="TrackBeamTheme-Sample-iOS-Classic">
+      <name>iOS Classic Sample</name>
+      <summary>iOS Classic Sample</summary>
+    </sample>
+    <sample id="TrackBeamTheme-Sample-iOS">
+      <name>iOS Unified Sample</name>
+      <summary>iOS Unified Sample</summary>
+    </sample>
+  </samples>
+</component>

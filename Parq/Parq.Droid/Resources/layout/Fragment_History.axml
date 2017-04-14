@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+        <android.support.v7.widget.CardView
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/card_margin"
+            android:layout_marginRight="3dp"
+            android:layout_marginTop="@dimen/card_margin"
+            android:layout_marginBottom="@dimen/card_margin"
+            android:gravity="center_vertical"
+            local:cardCornerRadius="2dp"
+            local:cardElevation="2dp"
+            local:cardPreventCornerOverlap="false"
+            local:contentPadding="2dp"
+            local:cardBackgroundColor="@color/primaryCardView">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_centerVertical="true">
+                <TextView
+                    android:id="@+id/history_total_tickets"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android_marginTop="2dp"
+                    android:text="0"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:gravity="center_horizontal"
+                    android:layout_alignParentBottom="true"
+                    android_marginBottom="2dp"
+                    android:text="History Tickets" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="@dimen/card_margin"
+            android:layout_marginTop="@dimen/card_margin"
+            android:layout_marginBottom="@dimen/card_margin"
+            android:gravity="center_vertical"
+            local:cardCornerRadius="2dp"
+            local:cardElevation="2dp"
+            local:cardPreventCornerOverlap="false"
+            local:contentPadding="2dp"
+            local:cardBackgroundColor="@color/primaryCardView">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_centerVertical="true">
+                <TextView
+                    android:id="@+id/history_total_expense"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_centerVertical="true"
+                    android_marginTop="2dp"
+                    android:text="R 0.00"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android_marginBottom="2dp"
+                    android:textColor="@color/white"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center_horizontal"
+                    android:text="Total Expense" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/history_frame_busy"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/his_ticket_recyclerView"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

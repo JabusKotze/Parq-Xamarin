@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<component format="1" id="gravatarmobile">
+  <name>Gravatar Mobile API</name>
+  <publisher>DSoft Developments</publisher>
+  <publisher-url>http://www.dsoftonline.com</publisher-url>
+  <src-url>https://github.com/newky2k/GravatarMobile</src-url>
+  <version>1.2</version>
+  <summary>Mobile API for Gravatar with support for images and profiles</summary>
+  <screenshots>
+    <img src="screenshots/screenshot_ios.png" title="screenshot_ios" />
+    <img src="screenshots/screenshot_android.png" title="screenshot_android" />
+    <img src="screenshots/screenshot_wp.png" title="screenshot_wp" />
+  </screenshots>
+  <samples>
+    <sample id="GravatarMobile-iOS">
+      <name>iOS Sample</name>
+      <summary>iOS Sample</summary>
+    </sample>
+    <sample id="GravatarMobile-iOS-Classic">
+      <name>iOS Classic Sample</name>
+      <summary>iOS Classic Sample</summary>
+    </sample>
+    <sample id="GravatarMobile-Android">
+      <name>Android Sample</name>
+      <summary>Android Sample</summary>
+    </sample>
+    <sample id="GravatarMobile-WP-External">
+      <name>Windows Phone Sample</name>
+      <summary>Windows Phone Sample</summary>
+    </sample>
+    <sample id="GravatarMobileMac">
+      <name>Mac Sample</name>
+      <summary>Mac Sample</summary>
+    </sample>
+  </samples>
+</component>

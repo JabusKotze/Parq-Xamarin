@@ -1,0 +1,172 @@
+#region Copyright
+/*Copyright (c) 2016 Javus Software (Pty) Ltd
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
+#endregion
+#region USINGS
+using System;
+
+using Android.App;
+using Android.Content;
+using Android.Views;
+using Android.Widget;
+using Android.Support.V7.Widget;
+
+using Parq.Models;
+using Parq.ViewModels;
+using Parq.Droid.Services;
+using Parq.Droid.Helpers;
+
+using Square.Picasso;
+using Refractored.Controls;
+using Parq.Helpers;
+#endregion
+
+namespace Parq.Droid.Adapters
+{
+    #region VIEWHOLDER
+    public class ActiveTicketHolder : RecyclerView.ViewHolder
+    {
+        public TextView Facility { get; private set; }
+        public TextView Timer { get; private set; }
+        public TextView Price { get; private set; }
+        public TextView CreatedAtTime { get; private set; }
+        public LinearLayout Background { get; private set; }
+        public CircleImageView ProfilePic { get; private set; }
+
+        public ActiveTicketHolder (View itemView, Action<int> listener) : base(itemView)
+        {
+            Facility = itemView.FindViewById<TextView>(Resource.Id.facility_name);
+            Timer = itemView.FindViewById<TextView>(Resource.Id.timer);
+            Price = itemView.FindViewById<TextView>(Resource.Id.list_price);
+            CreatedAtTime = itemView.FindViewById<TextView>(Resource.Id.created_at_time);
+            Background = itemView.FindViewById<LinearLayout>(Resource.Id.act_ticket_linear_layout);
+            ProfilePic = itemView.FindViewById<CircleImageView>(Resource.Id.act_ticket_pro_image);            
+
+            itemView.Click += (sender, e) => listener (base.AdapterPosition);            
+        }
+    }
+    #endregion
+
+    #region ADAPTER
+    public class ActiveTicketAdapter : RecyclerView.Adapter
+    {
+        private ActiveTicketsViewModel viewModel;
+        private Context context;
+        private Activity activity;
+        private string connection, profileUri;
+        private int image;
+
+        public event EventHandler<int> ItemClick;
+        private ActiveTicketHolder viewHolder;
+
+        public System.Timers.Timer timer;
+        public TimeSpan ticks;
+                
+        private StopWatchService m_stopwatchService;
+
+        public ActiveTicket mActiveTickets;
+        public ActiveTicketAdapter(Context context, ActiveTicketsViewModel viewModel)
+        {                        
+            this.viewModel = viewModel;
+            this.context = context;
+            this.activity = (Activity)context;            
+        }
+
+        public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
+        {
+            View itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.item_active_ticket_mod, parent, false);
+            viewHolder = new ActiveTicketHolder(itemView, OnClick);
+
+            connection = Settings.Connection;
+            profileUri = Settings.ProfileImage; 
+            image = Resource.Drawable.profile_avatar;            
+
+            if (connection == "facebook")
+            {
+                PicassoLoadImage.LoadProfilePic(activity, profileUri, viewHolder.ProfilePic, image, false, true);
+            }
+            else
+            {
+                PicassoLoadImage.LoadProfilePic(activity, profileUri, viewHolder.ProfilePic, image);
+            }
+
+            return viewHolder;
+        }
+
+        public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
+        {
+            try
+            {
+                viewHolder = holder as ActiveTicketHolder;
+
+                // Set the data in this ViewHolder's CardView 
+                // from this position in the active ticket viewModel:
+                var ticket = viewModel.ActiveTickets[position];
+
+                viewHolder.Facility.Text = ticket.FacilityName;                
+                viewHolder.CreatedAtTime.Text = ticket.InsertDateLongDisplay;
+
+                Picasso.With(context)
+                       .Load("http://www.parq.co.za/appimages/facility/" + ticket.FacilityName.Replace(" ", "") + ".jpg")
+                       .Placeholder(Resource.Drawable.transparent_circle_background_blk)
+                       .Error(Resource.Drawable.transparent_circle_background_blk)
+                       .Resize(360, 126)
+                       .CenterCrop()
+                       .Into(new PicassoBackgroundManagerTargetLinearLayout(viewHolder.Background));
+                
+                updateElapsedTime(ticket);
+
+                updateElapsedPrice(ticket);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }            
+        }        
+
+        public void updateElapsedTime(ActiveTicket ticket)
+        {
+            if (viewModel.ActiveTickets.Count > 0)
+            {
+                activity.RunOnUiThread(() => viewHolder.Timer.Text = ticket.formatElapsedTime);                
+            }
+        }
+
+        public void updateElapsedPrice(ActiveTicket ticket)
+        {
+            if (viewModel.ActiveTickets.Count > 0)
+            {
+                activity.RunOnUiThread(() => viewHolder.Price.Text = ticket.formatedElapsedPrice);
+            }
+        }
+
+        // Return the number of active tickets in the viewModel:
+        public override int ItemCount
+        {
+            get
+            {
+                return viewModel.ActiveTickets.Count;
+            }
+        }
+
+        // Raise an event when the item-click takes place:
+        void OnClick(int position)
+        {
+            if (ItemClick != null)
+                ItemClick(this, position);
+        }        
+    }
+    #endregion
+}

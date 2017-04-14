@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Copyright (c) 2016 Javus Software (Pty) Ltd
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item android:state_pressed="true" >
+    <shape>
+      <gradient
+          android:startColor="@color/primary"
+          android:endColor="@color/primary"
+          android:angle="270" />
+      <stroke
+          android:width="10dp"
+          android:color="@color/primary" />
+      <corners
+          android:radius="0dp" />
+      <padding
+          android:left="10dp"
+          android:top="10dp"
+          android:right="10dp"
+          android:bottom="10dp" />
+    </shape>
+  </item>
+
+  <item android:state_focused="true" >
+    <shape>
+      <gradient
+          android:endColor="@color/yellow2"
+          android:startColor="@color/yellow2"
+          android:angle="270" />
+      <stroke
+          android:width="1dp"
+          android:color="@color/yellow2" />
+      <corners
+          android:radius="0dp" />
+      <padding
+          android:left="10dp"
+          android:top="10dp"
+          android:right="10dp"
+          android:bottom="10dp" />
+    </shape>
+  </item>
+
+  <item>
+    <shape>
+      <gradient
+          android:endColor="@color/primary"
+          android:startColor="@color/primary"
+          android:angle="270" />
+      <stroke
+          android:width="0dp"
+          android:color="@color/primaryDark" />
+      <corners
+          android:radius="0dp" />
+
+    </shape>
+  </item>
+</selector>

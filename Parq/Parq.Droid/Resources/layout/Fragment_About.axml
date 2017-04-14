@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/frame_About"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="24dp">
+        <Button
+            style="@style/ButtonWarning"
+            android:id="@+id/about_feedbackButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Send Feedback"
+            android:textColor="@color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_alignParentRight="true" />
+        <Button
+            style="@style/ButtonWarning"
+            android:id="@+id/about_forceCrash"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Force Crash"
+            android:textColor="@color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_alignParentRight="true" />
+    </LinearLayout>
+</FrameLayout>

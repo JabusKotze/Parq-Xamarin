@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="?attr/dialogPreferredPadding"
+    android:id="@+id/notifFrame_CheckOut"
+    android:elevation="@dimen/design_fab_elevation"
+    android:background="@color/primaryCardView"
+    android:minWidth="300dp"
+    android:clickable="true">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1_CheckOut"
+        android:layout_gravity="center">
+        <TextView
+            android:text="Thank You"
+            android:id="@+id/notifTitle_CheckOut"
+            android:textStyle="normal"
+            android:textSize="24sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="?attr/colorPrimary"
+            android:layout_marginBottom="8dp" />
+        <TextView
+            android:id="@+id/notifCaption_CheckOut"
+            android:text="Swipe to Dismiss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/hintText"
+            android:layout_gravity="center" />
+        <Space
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:id="@+id/fabPlaceholder_CheckOut"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</FrameLayout>
